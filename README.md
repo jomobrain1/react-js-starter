@@ -71,6 +71,7 @@ src/
     Login.jsx
     Signup.jsx
     AdminDashboard.jsx
+  components/
     ProductDetail.jsx
     Cart.jsx
   styles/
