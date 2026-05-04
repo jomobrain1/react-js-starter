@@ -2,6 +2,7 @@ import { CartIcon, MenuIcon, ShoppingBagIcon, XIcon } from "../ui/Icons.jsx";
 import { categories, products } from "../data/products.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "../styles/LandingStyles.css";
 
 const process = [
   { title: "Launch", text: "Publish a calm storefront with clean product cards." },

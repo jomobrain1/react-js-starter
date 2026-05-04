@@ -16,6 +16,7 @@ import {
 import { products } from "../data/products.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "../styles/DashboardStyles.css";
 
 const metrics = [
   { label: "Revenue", value: "$48,240", change: "+12.4%" },

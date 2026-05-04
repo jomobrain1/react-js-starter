@@ -1,0 +1,28 @@
+.cart-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.cart-empty {
+  display: grid;
+  width: min(100%, 440px);
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.cart-empty svg {
+  width: 42px;
+  height: 42px;
+}
+
+.cart-empty h1,
+.cart-empty p {
+  margin: 0;
+}
+
+.cart-empty p {
+  color: var(--muted);
+}

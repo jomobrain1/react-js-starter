@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CartIcon, MenuIcon, ShoppingBagIcon, XIcon } from "../ui/Icons.jsx";
 import { findProduct, products } from "../data/products.js";
+import "../styles/ProductDetailStyles.css";
 
 export default function ProductDetail() {
   const [open, setOpen] = useState(false);

@@ -1,5 +1,6 @@
 import { CartIcon } from "../ui/Icons.jsx";
 import { Link } from "react-router-dom";
+import "../styles/CartStyles.css";
 
 export default function Cart() {
   return (
