@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
+import { HomeIcon } from "./Icons.jsx";
 import "../styles/AuthStyles.css";
 
 export default function AuthLayout({ title, subtitle, footerText, footerLink, footerHref, children }) {
   return (
     <main className="auth-page">
       <section className="auth-card">
-        <Link className="brand" to="/">
-          <span className="brand-mark">B</span>
-          <span>Beast Commerce</span>
+        <Link className="auth-icon" to="/" aria-label="Home">
+          <HomeIcon />
         </Link>
         <div className="auth-heading">
           <h2>{title}</h2>

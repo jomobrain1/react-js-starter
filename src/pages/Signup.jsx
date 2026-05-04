@@ -1,28 +1,38 @@
 import AuthLayout from "../ui/AuthLayout.jsx";
 import { Link } from "react-router-dom";
+import { ArrowRightIcon, LockIcon, MailIcon, UserIcon } from "../ui/Icons.jsx";
 
 export default function Signup() {
   return (
     <AuthLayout
-      title="Sign up"
-      subtitle="Create your account."
+      title="Create Account"
+      subtitle="Start managing your store"
       footerText="Already registered?"
       footerLink="Login"
       footerHref="/login"
     >
       <label>
         Full name
-        <input type="text" placeholder="Alex Carter" />
+        <span className="input-shell">
+          <UserIcon />
+          <input type="text" placeholder="Alex Carter" />
+        </span>
       </label>
       <label>
         Work email
-        <input type="email" placeholder="alex@company.com" />
+        <span className="input-shell">
+          <MailIcon />
+          <input type="email" placeholder="alex@company.com" />
+        </span>
       </label>
       <label>
         Password
-        <input type="password" placeholder="Create a password" />
+        <span className="input-shell">
+          <LockIcon />
+          <input type="password" placeholder="Create a password" />
+        </span>
       </label>
-      <Link className="primary-button form-submit" to="/admin">Create account</Link>
+      <Link className="primary-button form-submit" to="/admin">Create account <ArrowRightIcon /></Link>
     </AuthLayout>
   );
 }

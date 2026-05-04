@@ -1,22 +1,29 @@
 import AuthLayout from "../ui/AuthLayout.jsx";
 import { Link } from "react-router-dom";
+import { ArrowRightIcon, LockIcon, MailIcon } from "../ui/Icons.jsx";
 
 export default function Login() {
   return (
     <AuthLayout
-      title="Login"
-      subtitle="Welcome back."
+      title="Welcome Back"
+      subtitle="Sign in to manage your store"
       footerText="New here?"
       footerLink="Sign up"
       footerHref="/signup"
     >
       <label>
         Email address
-        <input type="email" placeholder="you@example.com" />
+        <span className="input-shell">
+          <MailIcon />
+          <input type="email" placeholder="you@example.com" />
+        </span>
       </label>
       <label>
         Password
-        <input type="password" placeholder="Enter your password" />
+        <span className="input-shell">
+          <LockIcon />
+          <input type="password" placeholder="Password" />
+        </span>
       </label>
       <div className="form-row">
         <label className="check-row">
@@ -25,7 +32,7 @@ export default function Login() {
         </label>
         <Link to="/signup">Forgot password?</Link>
       </div>
-      <Link className="primary-button form-submit" to="/admin">Continue</Link>
+      <Link className="primary-button form-submit" to="/admin">Sign In <ArrowRightIcon /></Link>
     </AuthLayout>
   );
 }

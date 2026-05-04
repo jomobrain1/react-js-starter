@@ -38,6 +38,26 @@ export function TrashIcon() {
   return <svg {...iconProps}><path d="M3 6h18" /><path d="M8 6V4h8v2" /><path d="m19 6-1 14H6L5 6" /><path d="M10 11v5M14 11v5" /></svg>;
 }
 
+export function HomeIcon() {
+  return <svg {...iconProps}><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></svg>;
+}
+
+export function MailIcon() {
+  return <svg {...iconProps}><path d="M4 6h16v12H4z" /><path d="m4 7 8 6 8-6" /></svg>;
+}
+
+export function LockIcon() {
+  return <svg {...iconProps}><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>;
+}
+
+export function UserIcon() {
+  return <svg {...iconProps}><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>;
+}
+
+export function ArrowRightIcon() {
+  return <svg {...iconProps}><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>;
+}
+
 export function SearchIcon() {
   return <svg {...iconProps}><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>;
 }
