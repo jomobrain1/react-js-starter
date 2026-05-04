@@ -14,6 +14,7 @@ import {
   XIcon
 } from "../ui/Icons.jsx";
 import { products } from "../data/products.js";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const metrics = [
@@ -44,11 +45,11 @@ const customers = [
 ];
 
 const navItems = [
-  { label: "Overview", href: "#/admin", section: "overview", icon: ChartIcon },
-  { label: "Orders", href: "#/admin/orders", section: "orders", icon: ShoppingBagIcon },
-  { label: "Products", href: "#/admin/products", section: "products", icon: BoxIcon },
-  { label: "Customers", href: "#/admin/customers", section: "customers", icon: UsersIcon },
-  { label: "Settings", href: "#/admin/settings", section: "settings", icon: SettingsIcon }
+  { label: "Overview", to: "/admin", section: "overview", icon: ChartIcon },
+  { label: "Orders", to: "/admin/orders", section: "orders", icon: ShoppingBagIcon },
+  { label: "Products", to: "/admin/products", section: "products", icon: BoxIcon },
+  { label: "Customers", to: "/admin/customers", section: "customers", icon: UsersIcon },
+  { label: "Settings", to: "/admin/settings", section: "settings", icon: SettingsIcon }
 ];
 
 const sectionTitles = {
@@ -136,7 +137,7 @@ function ProductsPanel() {
                 </div>
                 <small className="stock-note">{product.stock} units available</small>
                 <div className="card-actions">
-                  <a className="secondary-button" href={`#/product/${product.slug}`}>View product</a>
+                  <Link className="secondary-button" to={`/product/${product.slug}`}>View product</Link>
                   <button className="primary-button" type="button"><CartIcon /> Add to cart</button>
                 </div>
               </div>
@@ -260,7 +261,7 @@ function OverviewContent() {
             <span className="muted-text">Recent activity</span>
             <h2>Latest orders</h2>
           </div>
-          <a className="primary-button" href="#/admin/orders">View orders</a>
+          <Link className="primary-button" to="/admin/orders">View orders</Link>
         </div>
         <OrdersTable compact />
       </section>
@@ -306,10 +307,10 @@ export default function AdminDashboard({ section = "overview" }) {
     <div className="dashboard-shell">
       <aside className={`sidebar ${sidebarOpen ? "is-open" : ""}`}>
         <div className="sidebar-head">
-          <a className="brand" href="#/">
+          <Link className="brand" to="/">
             <span className="brand-mark">B</span>
             <span>Beast</span>
-          </a>
+          </Link>
           <button className="icon-button mobile-only" onClick={() => setSidebarOpen(false)} aria-label="Close menu">
             <XIcon />
           </button>
@@ -318,9 +319,9 @@ export default function AdminDashboard({ section = "overview" }) {
           {navItems.map((item) => {
             const Icon = item.icon;
             return (
-              <a className={section === item.section ? "active" : ""} href={item.href} key={item.section}>
+              <Link className={section === item.section ? "active" : ""} to={item.to} key={item.section}>
                 <Icon /> {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>

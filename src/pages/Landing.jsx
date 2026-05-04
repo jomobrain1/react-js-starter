@@ -1,5 +1,6 @@
 import { CartIcon, MenuIcon, ShoppingBagIcon, XIcon } from "../ui/Icons.jsx";
 import { categories, products } from "../data/products.js";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const process = [
@@ -24,23 +25,23 @@ export default function Landing() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="brand" href="#/">
+        <Link className="brand" to="/">
           <span className="brand-mark">B</span>
           <span>Beast Commerce</span>
-        </a>
+        </Link>
 
         <button className="icon-button mobile-only" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <XIcon /> : <MenuIcon />}
         </button>
 
         <nav className={`main-nav ${open ? "is-open" : ""}`}>
-          <a href="#/">Home</a>
+          <Link to="/">Home</Link>
           <a href="#collections">Collections</a>
           <a href="#features">Features</a>
-          <a href="#/admin">Dashboard</a>
-          <a className="ghost-button" href="#/login">Login</a>
-          <a className="primary-button" href="#/signup">Start free</a>
-          <a className="cart-link" href="#/cart" aria-label="Cart"><CartIcon /><span>4</span></a>
+          <Link to="/admin">Dashboard</Link>
+          <Link className="ghost-button" to="/login">Login</Link>
+          <Link className="primary-button" to="/signup">Start free</Link>
+          <Link className="cart-link" to="/cart" aria-label="Cart"><CartIcon /><span>4</span></Link>
         </nav>
       </header>
 
@@ -50,8 +51,8 @@ export default function Landing() {
             <h1>Clean ecommerce for modern teams.</h1>
             <p>Storefront, login, and dashboard in one minimal React app.</p>
             <div className="hero-actions">
-              <a className="primary-button" href="#/signup">Create account</a>
-              <a className="secondary-button" href="#/admin">View dashboard</a>
+              <Link className="primary-button" to="/signup">Create account</Link>
+              <Link className="secondary-button" to="/admin">View dashboard</Link>
             </div>
           </div>
 
@@ -149,7 +150,7 @@ export default function Landing() {
                   <s>{product.oldPrice}</s>
                 </div>
                 <div className="card-actions">
-                  <a className="secondary-button" href={`#/product/${product.slug}`}>View product</a>
+                  <Link className="secondary-button" to={`/product/${product.slug}`}>View product</Link>
                   <button className="primary-button" type="button"><CartIcon /> Add to cart</button>
                 </div>
               </div>
@@ -177,22 +178,22 @@ export default function Landing() {
             <span className="eyebrow">Admin ready</span>
             <h2>Manage products, orders, and customers from day one.</h2>
           </div>
-          <a className="primary-button" href="#/admin/products">Open products</a>
+          <Link className="primary-button" to="/admin/products">Open products</Link>
         </section>
       </main>
 
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand">
-            <a className="brand" href="#/">
+            <Link className="brand" to="/">
               <span className="brand-mark">B</span>
               <span>Beast Commerce</span>
-            </a>
+            </Link>
             <p className="footer-p">Minimal shopping and clean store management for modern teams.</p>
             <div className="social-row">
-              <a href="#/">IG</a>
-              <a href="#/">FB</a>
-              <a href="#/">X</a>
+              <Link to="/">IG</Link>
+              <Link to="/">FB</Link>
+              <Link to="/">X</Link>
             </div>
           </div>
 
@@ -205,9 +206,9 @@ export default function Landing() {
 
           <div className="footer-links">
             <h3>Company</h3>
-            <a href="#/login">My Account</a>
-            <a href="#/admin/orders">Orders</a>
-            <a href="#/admin/products">Products</a>
+            <Link to="/login">My Account</Link>
+            <Link to="/admin/orders">Orders</Link>
+            <Link to="/admin/products">Products</Link>
           </div>
 
           <form className="newsletter">

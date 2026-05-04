@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { CartIcon, MenuIcon, ShoppingBagIcon, XIcon } from "../ui/Icons.jsx";
 import { findProduct, products } from "../data/products.js";
 
-export default function ProductDetail({ slug }) {
+export default function ProductDetail() {
   const [open, setOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const { slug } = useParams();
   const product = findProduct(slug);
   const related = products.filter((item) => item.slug !== product.slug).slice(0, 3);
   const thumbnails = [0, 1, 2];
@@ -12,21 +14,21 @@ export default function ProductDetail({ slug }) {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="brand" href="#/">
+        <Link className="brand" to="/">
           <span className="brand-mark">B</span>
           <span>Beast Commerce</span>
-        </a>
+        </Link>
 
         <button className="icon-button mobile-only" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <XIcon /> : <MenuIcon />}
         </button>
 
         <nav className={`main-nav ${open ? "is-open" : ""}`}>
-          <a href="#/">Home</a>
-          <a href="#/admin/products">Products</a>
-          <a className="ghost-button" href="#/login">Login</a>
-          <a className="primary-button" href="#/signup">Start free</a>
-          <a className="cart-link" href="#/cart" aria-label="Cart"><CartIcon /><span>4</span></a>
+          <Link to="/">Home</Link>
+          <Link to="/admin/products">Products</Link>
+          <Link className="ghost-button" to="/login">Login</Link>
+          <Link className="primary-button" to="/signup">Start free</Link>
+          <Link className="cart-link" to="/cart" aria-label="Cart"><CartIcon /><span>4</span></Link>
         </nav>
       </header>
 
@@ -109,7 +111,7 @@ export default function ProductDetail({ slug }) {
                     <s>{item.oldPrice}</s>
                   </div>
                   <div className="card-actions">
-                    <a className="secondary-button" href={`#/product/${item.slug}`}>View product</a>
+                    <Link className="secondary-button" to={`/product/${item.slug}`}>View product</Link>
                     <button className="primary-button" type="button"><CartIcon /> Add to cart</button>
                   </div>
                 </div>

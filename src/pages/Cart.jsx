@@ -1,4 +1,5 @@
 import { CartIcon } from "../ui/Icons.jsx";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   return (
@@ -7,7 +8,7 @@ export default function Cart() {
         <CartIcon />
         <h1>Your cart is ready</h1>
         <p>Add products from the store to start a clean checkout flow.</p>
-        <a className="primary-button" href="#/">Browse products</a>
+        <Link className="primary-button" to="/">Browse products</Link>
       </section>
     </main>
   );

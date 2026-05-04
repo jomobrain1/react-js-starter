@@ -1,4 +1,5 @@
 import AuthLayout from "../ui/AuthLayout.jsx";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   return (
@@ -7,7 +8,7 @@ export default function Signup() {
       subtitle="Create your account."
       footerText="Already registered?"
       footerLink="Login"
-      footerHref="#/login"
+      footerHref="/login"
     >
       <label>
         Full name
@@ -21,7 +22,7 @@ export default function Signup() {
         Password
         <input type="password" placeholder="Create a password" />
       </label>
-      <a className="primary-button form-submit" href="#/admin">Create account</a>
+      <Link className="primary-button form-submit" to="/admin">Create account</Link>
     </AuthLayout>
   );
 }

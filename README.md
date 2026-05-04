@@ -28,16 +28,16 @@ Live preview: https://react-js-starter-mu.vercel.app/
 
 ## Routes
 
-- `#/` - Landing page
-- `#/login` - Login
-- `#/signup` - Signup
-- `#/cart` - Cart
-- `#/product/core-hoodie` - Product detail
-- `#/admin` - Dashboard overview
-- `#/admin/orders` - Orders
-- `#/admin/products` - Products
-- `#/admin/customers` - Customers
-- `#/admin/settings` - Settings
+- `/` - Landing page
+- `/login` - Login
+- `/signup` - Signup
+- `/cart` - Cart
+- `/product/core-hoodie` - Product detail
+- `/admin` - Dashboard overview
+- `/admin/orders` - Orders
+- `/admin/products` - Products
+- `/admin/customers` - Customers
+- `/admin/settings` - Settings
 
 ## Getting Started
 

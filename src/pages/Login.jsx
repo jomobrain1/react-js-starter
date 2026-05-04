@@ -1,4 +1,5 @@
 import AuthLayout from "../ui/AuthLayout.jsx";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -7,7 +8,7 @@ export default function Login() {
       subtitle="Welcome back."
       footerText="New here?"
       footerLink="Sign up"
-      footerHref="#/signup"
+      footerHref="/signup"
     >
       <label>
         Email address
@@ -22,9 +23,9 @@ export default function Login() {
           <input type="checkbox" />
           Remember me
         </label>
-        <a href="#/signup">Forgot password?</a>
+        <Link to="/signup">Forgot password?</Link>
       </div>
-      <a className="primary-button form-submit" href="#/admin">Continue</a>
+      <Link className="primary-button form-submit" to="/admin">Continue</Link>
     </AuthLayout>
   );
 }
